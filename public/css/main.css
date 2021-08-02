@@ -43,6 +43,12 @@ Primary use:
 
 body {padding-right: 0px !important;
   background-color: #1b1e2d;
+
+
+  background: -webkit-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
+  background: -o-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
+  background: -moz-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
+  background: linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
   width: 100%;
 }
 .modal {
@@ -355,16 +361,22 @@ input.input100 {
 [ Background ]*/
 .bg0 {
   background-color: #1b1e2d;
+
+
+  background: -webkit-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
+  background: -o-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
+  background: -moz-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
+  background: linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
 }
 
 /*---------------------------------------------*/
 .bg-g1 {
   background-color: #1b1e2d;
 
-  /* background: -webkit-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
+  background: -webkit-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
   background: -o-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
   background: -moz-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
-  background: linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff); */
+  background: linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
 }
 
 
