@@ -1,11 +1,9 @@
-
 (function ($) {
     "use strict";
-
     /*==================================================================
     [ Validate ]*/
     var input = $('.validate-input .input100');
-
+    
     $('.validate-form').on('submit',function(){
         var check = true;
 
@@ -55,6 +53,12 @@
     [ Modal ]*/
     $('.modal-subscribe').on('click',function(e){
         e.stopPropagation();
+    })
+
+    console.log(document.getElementsByClassName("modal-subscribe"));
+
+    document.getElementsByClassName("modal-subscribe").onClick("click",function(e){
+        console.log("xd");
     })
     
     $('.btn-close-modal').on('click', function(){
