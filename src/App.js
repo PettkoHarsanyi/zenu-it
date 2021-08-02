@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          ZENUIT
+          Ide készül majd a Coming Soon oldal!
         </p>
       </header>
     </div>
