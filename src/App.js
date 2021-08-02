@@ -1,6 +1,7 @@
 import { Dialog, DialogTitle, DialogContent, Paper, Typography, Modal, DialogContentText, TextField, Grid, DialogActions, Button } from '@material-ui/core';
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
+import ParticleBackground from './ParticleBackground';
 
 function App() {
   const [timerDays, setTimerDays] = useState("00");
@@ -56,8 +57,11 @@ function App() {
   }
 
   return (
-    <>
     <div className="App">
+      <div style={{position:"absolute", width:"100%", height:"100vh", overflow:"hidden"}}>
+        <ParticleBackground/>
+      </div>
+      <div>
       <div className="bg-g1 size1 flex-w flex-col-c-sb p-l-15 p-r-15 p-t-55 p-b-35 respon1">
         <span></span>
         <div className="flex-col-c p-t-50 p-b-50">
@@ -114,9 +118,9 @@ function App() {
         <DialogContentText style={{fontFamily: "Montserrat-Regular", marginBottom:"15vh"}}>
             Amint kész lesz a weblapunk, rögtön értesítünk róla. <br />Nyugi, nem fogunk zaklatni!
           </DialogContentText>
-      </Dialog>      
+      </Dialog>   
+      </div>
     </div>
-    </>
   );
 }
 
