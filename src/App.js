@@ -1,17 +1,26 @@
-import { Grid } from '@material-ui/core';
+import { Grid, Modal, Typography, Paper } from '@material-ui/core';
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import { DateCard } from "./components/DateCard/DateCard";
 import logo from "./logo.png";
-
+import ParticleBackground from './ParticleBackground';
 
 function App() {
   const [timerDays, setTimerDays] = useState("00");
   const [timerHours, setTimerHours] = useState("00");
   const [timerMinutes, setTimerMinutes] = useState("00");
   const [timerSeconds, setTimerSeconds] = useState("00");
+  const [popupState, setPopupState] = useState(false);
+  const [popupText, setPopupText] = useState("");
+  const [subTexts, setSubTexts] = useState([]);
 
   let interval = useRef();
+
+  const handlePopup = (text,s1,s2,s3,s4) =>{
+    setPopupState(prev => !prev);
+    setPopupText(text);
+    setSubTexts([s1,s2,s3,s4]);
+  }
 
   const startTimer = () => {
     const countdownDate = new Date("September 1, 2021 00:00:00").getTime();
@@ -46,6 +55,7 @@ function App() {
   return (
     <>
     <div className="Bg" />
+    <ParticleBackground />
     <img className="Logo" src={logo} alt="logo"/>
     <div className="App">
       <Grid container>
@@ -73,11 +83,20 @@ function App() {
           <div className="Text bordered">ZENUIT</div>
 
           <Grid container justifyContent="space-evenly" style={{margin:"20vh 0 10vh 0"}}>
-            <Grid item xs={8} sm={3} className="Popup" ><div>Egyetemek</div></Grid>
-            <Grid item xs={8} sm={3} className="Popup" ><div>Vállalatok</div></Grid>
-            <Grid item xs={8} sm={3} className="Popup" ><div>Diákok</div></Grid>
+            <Grid item xs={8} sm={3} container justifyContent="center"><div onClick={()=>handlePopup("Egyetemek","Innovatív nyílt nap", "Újgenerációs állásbörze","Pályázatok","Szakmai előadások")} className="Popup">Egyetemek</div></Grid>
+            <Grid item xs={8} sm={3} container justifyContent="center"><div onClick={()=>handlePopup("Vállalatok","Álláshirdetések","Megjelenés","CSR","Network")} className="Popup">Vállalatok</div></Grid>
+            <Grid item xs={8} sm={3} container justifyContent="center"><div onClick={()=>handlePopup("Diákok","MentorME","IncubIT","Network","Academy")} className="Popup">Diákok</div></Grid>
           </Grid>
 
+          <Modal open={popupState} onClose={()=>handlePopup()} className="Modal">
+            <Paper elevation={0} className="paper">
+              <div className="ModalTitle">{popupText}</div>
+              <div className="kiskor1 cl">{subTexts[0]}</div>
+              <div className="kiskor2 cl">{subTexts[1]}</div>
+              <div className="kiskor3 cl">{subTexts[2]}</div>
+              <div className="kiskor4 cl">{subTexts[3]}</div>
+            </Paper>
+          </Modal>
 
 
         </Grid>
