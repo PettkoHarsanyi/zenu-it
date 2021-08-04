@@ -4,6 +4,8 @@ import './App.css';
 import { DateCard } from "./components/DateCard/DateCard";
 import logo from "./logo.png";
 import ParticleBackground from './ParticleBackground';
+import "animate.css/animate.min.css";
+import ScrollAnimation from 'react-animate-on-scroll';
 
 function App() {
   const [timerDays, setTimerDays] = useState("00");
@@ -80,22 +82,43 @@ function App() {
             </Grid>
 
           </Grid>
-          <div className="Text bordered">ZENUIT</div>
+          <ScrollAnimation animateIn="animate__slideInUp">
+            <div className="Text bordered">ZENUIT</div>
+          </ScrollAnimation>
 
           <Grid container justifyContent="space-evenly" style={{margin:"20vh 0 10vh 0"}}>
-            <Grid item xs={8} sm={3} container justifyContent="center"><div onClick={()=>handlePopup("Egyetemek","Innovatív nyílt nap", "Újgenerációs állásbörze","Pályázatok","Szakmai előadások")} className="Popup">Egyetemek</div></Grid>
-            <Grid item xs={8} sm={3} container justifyContent="center"><div onClick={()=>handlePopup("Vállalatok","Álláshirdetések","Megjelenés","CSR","Network")} className="Popup">Vállalatok</div></Grid>
-            <Grid item xs={8} sm={3} container justifyContent="center"><div onClick={()=>handlePopup("Diákok","MentorME","IncubIT","Network","Academy")} className="Popup">Diákok</div></Grid>
+            <Grid item xs={8} sm={3} container justifyContent="center">
+              <ScrollAnimation animateOnce animateIn="animate__fadeInUp">
+                <div onClick={()=>handlePopup("Egyetemek","Innovatív nyílt nap", "Újgenerációs állásbörze","Pályázatok","Szakmai előadások")} className="Popup">
+                  Egyetemek
+                </div>
+              </ScrollAnimation>
+            </Grid>
+            <Grid item xs={8} sm={3} container justifyContent="center">
+              <ScrollAnimation animateOnce animateIn="animate__fadeInUp">
+
+                <div onClick={()=>handlePopup("Vállalatok","Álláshirdetések","Megjelenés","CSR","Network")} className="Popup">
+                  Vállalatok
+                </div>
+              </ScrollAnimation>
+            </Grid>
+            <Grid item xs={8} sm={3} container justifyContent="center">
+              <ScrollAnimation animateOnce animateIn="animate__fadeInUp">
+                <div onClick={()=>handlePopup("Diákok","MentorME","IncubIT","Network","Academy")} className="Popup">
+                  Diákok
+                </div>
+              </ScrollAnimation>
+            </Grid>
           </Grid>
 
-          <Modal open={popupState} onClose={()=>handlePopup()} className="Modal">
-            <Paper elevation={0} className="paper">
-              <div className="ModalTitle">{popupText}</div>
-              <div className="kiskor1 cl">{subTexts[0]}</div>
-              <div className="kiskor2 cl">{subTexts[1]}</div>
-              <div className="kiskor3 cl">{subTexts[2]}</div>
-              <div className="kiskor4 cl">{subTexts[3]}</div>
-            </Paper>
+          <Modal open={popupState} onClose={()=>handlePopup()} className="Modal" tabIndex={-1}>
+              <Paper elevation={0} className="paper">
+                <div className="ModalTitle">{popupText}</div>
+                <div className="kiskor1 cl">{subTexts[0]}</div>
+                <div className="kiskor2 cl">{subTexts[1]}</div>
+                <div className="kiskor3 cl">{subTexts[2]}</div>
+                <div className="kiskor4 cl">{subTexts[3]}</div>
+              </Paper>
           </Modal>
 
 
