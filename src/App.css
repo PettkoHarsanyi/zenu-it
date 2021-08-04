@@ -24,15 +24,37 @@
   height:100vh;
   display: flex;
   flex-direction: column;
+  
+  font-family: Montserrat-Light;
+  font-size: 3vh;
+  color:white;
+}
+
+.Bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: #1b1e2d;
   background: -webkit-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
   background: -o-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
   background: -moz-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
   background: linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
-  
-  font-family: Montserrat-Light;
-  font-size: 3vh;
-  color:white;
+  z-index: -1;
+}
+
+.Logo{
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  max-width: 20vh;
+}
+
+.bordered{
+  border: 1pt solid white;
+  border-radius: 3vh;
+  padding: 1vh 2vh 1vh 2vh;
 }
 
 .Title{
@@ -64,20 +86,61 @@
   background-position: 50% 50%; 
 }
 
+.Popup{
+  border: 0.5vh solid white; 
+  border-radius: 2vh;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: Montserrat-Bold;
+  /* background: url("./uni.jpg"); */
+  background-size: cover;
+  background-position: 50% 70%;
+}
+
+.Popup:hover{
+  border: 0.5vh solid white; 
+  background-position: 50% 70%;
+  border-radius: 2vh;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vh;
+}
+
+@media only screen and (max-width: 1000px){
+  .Logo{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    max-width: 20vh;
+  }
+}
+
 
 @media only screen and (max-width: 600px) {
   .App {
     height: auto;
     display: flex;
     flex-direction: column;
-    background-color: #1b1e2d;
+    /* background-color: #1b1e2d;
     background: -webkit-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
     background: -o-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
     background: -moz-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
     background: linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
-    
+     */
     font-family: Montserrat-Light;
     font-size: 2vh;
     color:white;
+  }
+
+  .Title{
+    margin-top: 20vh;
   }
 }

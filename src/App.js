@@ -2,6 +2,8 @@ import { Grid } from '@material-ui/core';
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import { DateCard } from "./components/DateCard/DateCard";
+import logo from "./logo.png";
+
 
 function App() {
   const [timerDays, setTimerDays] = useState("00");
@@ -43,6 +45,8 @@ function App() {
 
   return (
     <>
+    <div className="Bg" />
+    <img className="Logo" src={logo} alt="logo"/>
     <div className="App">
       <Grid container>
         <Grid item xs={1} md={3}></Grid>
@@ -66,7 +70,16 @@ function App() {
             </Grid>
 
           </Grid>
-          <div className="Text">ZENUIT</div>
+          <div className="Text bordered">ZENUIT</div>
+
+          <Grid container justifyContent="space-evenly" style={{margin:"20vh 0 10vh 0"}}>
+            <Grid item xs={8} sm={3} className="Popup" ><div>Egyetemek</div></Grid>
+            <Grid item xs={8} sm={3} className="Popup" ><div>Vállalatok</div></Grid>
+            <Grid item xs={8} sm={3} className="Popup" ><div>Diákok</div></Grid>
+          </Grid>
+
+
+
         </Grid>
         <Grid item xs={1} md={3}></Grid>
       </Grid>
